@@ -1,0 +1,31 @@
+TASK1_ GROUP8 ORF finder.
+Author: Hirra Farooq
+
+DESCRIPTION:
+The script will take the inputted genome sequences and search for ORFs in both the inputted sequence and its reverse complement. Multiple sequence files can be inputted at the command line and will be searched in turn.  
+
+The script is able to search for ORFs in all 6 reading frames. The script defines the ORF start site as ATG and stop codons as TAA, TAG and TGA. This script ignores nested ORFs (within a reading frame), returning the longest ones.  From the found ORFs this script also automatically removes any containing N nucleotides, returning only those that can be translated with complete codons. The script automatically generates a unique name for each ORF found. The script then translates the ORFs according to the standard genetic code. The script can print the found translated ORFs to the command line or a defined output file.
+In its default it will return ORFs with length >75 nucleotides in all 6 reading frames and output the found ORFs to the command line.
+ 
+COMMAND LINE OPTIONS:
+The following options are supported:
+-i 	—inputfile	Required. Must specify input file to be searched. Multiple file names can be specified in turn
+-f 	—framenumber	Specify which of the 6 reading frame to search for ORFs in. Takes values from: 1,2,3,-3,-2,-1
+-o	—outputfile	Specify output file to return results to. Default prints to terminal.
+-n 	—minlen		Specify minimum length of ORFs (in nucleotides) to return. Default is 75. 
+
+EXAMPLE: 
+The following is how to search the genome ‘genome1.fasta’ and 'genome2.fasta' for ORFs with length greater than 300 nt in reading frame +1, with output returned to the file, ‘myoutput.txt’
+
+Python3 task1_8.py -i genome1.fasta genome2.fasta -n 300 -f 1 -o myoutput.txt
+
+OUTPUT:
+Unique name followed by translated sequence of ORF found 
+
+>genome1_+1_375_1 MIKKRTPNAQITMTDIHAMALESARKTLSENQLQGEVYASDVFSDIEGKFDLIISNPPFHDGIDTAYRAVTELITQAKWHLNQGGELRIVANSFLPYPELLRQHFNDYQVLAQTGKFKVYSVKN
+
+Line beginning with > is unique name generated for each ORF found. It has the following format:
+> genome name_reading frame_length of ORF in nucleotides_ the number of ORF from this reading frame
+Outputs containing ? indicate an codon which could not be translated according to the standard genetic code. 
+
+

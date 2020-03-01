@@ -4,7 +4,11 @@ Author: Hirra Farooq
 DESCRIPTION:
 The script will take the inputted genome sequences and search for ORFs in both the inputted sequence and its reverse complement. Multiple sequence files can be inputted at the command line and will be searched in turn.  
 
-The script is able to search for ORFs in all 6 reading frames. The script defines the ORF start site as ATG and stop codons as TAA, TAG and TGA. This script ignores nested ORFs (within a reading frame), returning the longest ones.  From the found ORFs this script also automatically removes any containing N nucleotides, returning only those that can be translated with complete codons. The script automatically generates a unique name for each ORF found. The script then translates the ORFs according to the standard genetic code. The script can print the found translated ORFs to the command line or a defined output file.
+The script is able to search for ORFs in all 6 reading frames. 
+The script defines the ORF start site as ATG and stop codons as TAA, TAG and TGA. This script ignores nested ORFs (within a reading frame), returning the longest ones.  
+From the found ORFs this script also automatically removes any containing N nucleotides, returning only those that can be translated with complete codons. 
+The script automatically generates a unique name for each ORF found. The script then translates the ORFs according to the standard genetic code. 
+The script can print the found translated ORFs to the command line or a defined output file.
 In its default it will return ORFs with length >75 nucleotides in all 6 reading frames and output the found ORFs to the command line.
  
 COMMAND LINE OPTIONS:

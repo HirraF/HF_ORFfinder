@@ -26,6 +26,7 @@ Unique name followed by translated sequence of ORF found
 
 Line beginning with > is unique name generated for each ORF found. It has the following format:
 > genome name_reading frame_length of ORF in nucleotides_ the number of ORF from this reading frame
+
 Outputs containing ? indicate an codon which could not be translated according to the standard genetic code. 
 
 
